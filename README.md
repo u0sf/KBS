@@ -7,6 +7,10 @@ The user goes through a modern, step‑by‑step **question wizard**; each answe
 
 The key design choice is separating the knowledge from the application logic: the decision tree and solutions live in `kb.py`, so you can expand the system by adding new questions and results without changing the server code.
 
+## Architecture
+
+![System Architecture](docs/architecture.svg)
+
 ## بريف عن الفكرة
 
 `StS` هو **نظام خبير (Knowledge‑Based System)** لتشخيص مشاكل شائعة في الكمبيوتر واللاب توب.  

@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-label="System Architecture diagram">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#070A12"/>
+      <stop offset="1" stop-color="#0B1022"/>
+    </linearGradient>
+
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#7C5CFF"/>
+      <stop offset="1" stop-color="#2DE2E6"/>
+    </linearGradient>
+
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="10" stdDeviation="14" flood-color="#000000" flood-opacity="0.55"/>
+    </filter>
+
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto" markerUnits="strokeWidth">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="url(#accent)"/>
+    </marker>
+
+    <style>
+      .title { font: 800 36px ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial; fill: #EAF0FF; }
+      .subtitle { font: 600 16px ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial; fill: rgba(234,240,255,0.72); }
+      .group { fill: rgba(255,255,255,0.06); stroke: rgba(255,255,255,0.12); stroke-width: 2; rx: 22; }
+      .groupLabel { font: 800 18px ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial; fill: rgba(234,240,255,0.92); }
+      .box { fill: rgba(255,255,255,0.06); stroke: rgba(255,255,255,0.16); stroke-width: 2; rx: 16; }
+      .boxText { font: 700 16px ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial; fill: rgba(234,240,255,0.92); }
+      .boxSub { font: 600 13px ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial; fill: rgba(234,240,255,0.62); }
+      .arrow { stroke: url(#accent); stroke-width: 4; fill: none; marker-end: url(#arrow); stroke-linecap: round; }
+      .mutedLine { stroke: rgba(255,255,255,0.14); stroke-width: 2; fill: none; }
+    </style>
+  </defs>
+
+  <!-- background -->
+  <rect x="0" y="0" width="1600" height="900" fill="url(#bg)"/>
+
+  <!-- header -->
+  <text x="64" y="92" class="title">System Architecture</text>
+  <text x="64" y="126" class="subtitle">Layered Knowledge-Based System for PC/Laptop Troubleshooting</text>
+
+  <!-- Presentation group -->
+  <g filter="url(#shadow)">
+    <rect x="90" y="170" width="1420" height="150" class="group"/>
+    <text x="124" y="208" class="groupLabel">Presentation</text>
+    <rect x="560" y="215" width="480" height="75" class="box"/>
+    <text x="800" y="252" text-anchor="middle" class="boxText">Web UI (Question Wizard)</text>
+    <text x="800" y="274" text-anchor="middle" class="boxSub">Step-by-step questions, navigation, and results</text>
+  </g>
+
+  <!-- Application / Inference group -->
+  <g filter="url(#shadow)">
+    <rect x="860" y="355" width="650" height="320" class="group"/>
+    <text x="894" y="393" class="groupLabel">Application / Inference</text>
+
+    <rect x="915" y="420" width="540" height="75" class="box"/>
+    <text x="1185" y="457" text-anchor="middle" class="boxText">Session Controller</text>
+    <text x="1185" y="479" text-anchor="middle" class="boxSub">Tracks current node, selected answer, and history</text>
+
+    <rect x="915" y="515" width="540" height="75" class="box"/>
+    <text x="1185" y="552" text-anchor="middle" class="boxText">Decision Navigator</text>
+    <text x="1185" y="574" text-anchor="middle" class="boxSub">Chooses next question or final result based on answers</text>
+
+    <rect x="915" y="610" width="540" height="45" class="box"/>
+    <text x="1185" y="639" text-anchor="middle" class="boxText">State Store (Cookie Session)</text>
+  </g>
+
+  <!-- Knowledge group -->
+  <g filter="url(#shadow)">
+    <rect x="90" y="415" width="720" height="420" class="group"/>
+    <text x="124" y="453" class="groupLabel">Knowledge</text>
+
+    <rect x="170" y="480" width="560" height="80" class="box"/>
+    <text x="450" y="520" text-anchor="middle" class="boxText">Knowledge Base</text>
+    <text x="450" y="544" text-anchor="middle" class="boxSub">Decision tree defined in kb.py</text>
+
+    <rect x="140" y="600" width="200" height="85" class="box"/>
+    <text x="240" y="642" text-anchor="middle" class="boxText">Questions</text>
+    <text x="240" y="664" text-anchor="middle" class="boxSub">Nodes</text>
+
+    <rect x="360" y="600" width="200" height="85" class="box"/>
+    <text x="460" y="642" text-anchor="middle" class="boxText">Transitions</text>
+    <text x="460" y="664" text-anchor="middle" class="boxSub">Options</text>
+
+    <rect x="580" y="600" width="200" height="85" class="box"/>
+    <text x="680" y="642" text-anchor="middle" class="boxText">Solutions</text>
+    <text x="680" y="664" text-anchor="middle" class="boxSub">Results</text>
+
+    <!-- connectors inside Knowledge -->
+    <path class="mutedLine" d="M 450 560 L 240 600"/>
+    <path class="mutedLine" d="M 450 560 L 460 600"/>
+    <path class="mutedLine" d="M 450 560 L 680 600"/>
+  </g>
+
+  <!-- Infrastructure group -->
+  <g filter="url(#shadow)">
+    <rect x="860" y="705" width="650" height="130" class="group"/>
+    <text x="894" y="743" class="groupLabel">Infrastructure</text>
+
+    <rect x="915" y="765" width="260" height="55" class="box"/>
+    <text x="1045" y="798" text-anchor="middle" class="boxText">Python HTTP Server</text>
+
+    <rect x="1195" y="765" width="260" height="55" class="box"/>
+    <text x="1325" y="798" text-anchor="middle" class="boxText">Static Assets</text>
+    <text x="1325" y="818" text-anchor="middle" class="boxSub">CSS</text>
+  </g>
+
+  <!-- Arrows between layers -->
+  <!-- Web UI -> Session Controller -->
+  <path class="arrow" d="M 800 290 C 820 330, 960 360, 1185 420"/>
+
+  <!-- Session Controller -> Decision Navigator -->
+  <path class="arrow" d="M 1185 495 L 1185 515"/>
+
+  <!-- Session Controller -> State Store -->
+  <path class="arrow" d="M 1355 495 C 1460 520, 1460 590, 1410 610"/>
+
+  <!-- Decision Navigator -> Knowledge Base -->
+  <path class="arrow" d="M 915 552 C 800 560, 740 560, 730 520"/>
+
+  <!-- Python HTTP Server -> Web UI -->
+  <path class="arrow" d="M 1045 765 C 1020 690, 940 620, 860 540"/>
+
+  <!-- Python HTTP Server -> Static Assets -->
+  <path class="arrow" d="M 1175 792 L 1195 792"/>
+</svg>
+
