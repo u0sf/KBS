@@ -1,31 +1,9 @@
-# Byte-compiled / cache
 __pycache__/
-*.py[cod]
-*$py.class
-*.so
-
-# Virtual environments
-.venv/
+*.pyc
+*.pyo
+*.pyd
+.Python
 venv/
-env/
-
-# IDE / OS
+.venv/
 .idea/
 .vscode/
-*.swp
-.DS_Store
-Thumbs.db
-
-# Distribution / packaging
-*.egg-info/
-dist/
-build/
-
-# Testing / coverage
-.pytest_cache/
-.coverage
-htmlcov/
-
-# Local env files
-.env
-.env.local
